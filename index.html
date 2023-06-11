@@ -46,10 +46,43 @@
         </div>
 
         <!-- Slider -->
-        <div id="slider">
-            <div class="text-slide">
-                <h2 class="text-heading">Chicago</h2>
-                <div class="text-description">Thank you, Chicago - A night we won't forget.</div>
+        <div class="banner">
+            <div class="header_slider">
+                <div class="header_slider-item">
+                    <div class="header_slider-item-content">
+                        <h3>Los Angeles</h3>
+                        <p><b>We had the best time playing at Venice Beach!</b></p>
+                    </div>
+                    <div class="header_slider-item-img">
+                        <img src="./imgs/la.jpg" alt="">
+                    </div>
+                </div>
+                <div class="header_slider-item">
+                    <div class="header_slider-item-content">
+                        <h3>New York</h3>
+                        <p><b>The atmosphere in New York is lorem ipsum.</b></p>
+                    </div>
+                    <div class="header_slider-item-img">
+                        <img src="./imgs/ny.jpg" alt="">
+                    </div>
+                </div>
+                <div class="header_slider-item">
+                    <div class="header_slider-item-content">
+                        <h3>Chicago</h3>
+                        <p><b>Thank you, Chicago - A night we won't forget.</b></p>
+                    </div>
+                    <div class="header_slider-item-img">
+                        <img src="./imgs/chicago.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="header_slider-control">
+                <div class="header__slider-control-left control-arrow">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+                <div class="header__slider-control-right control-arrow">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
             </div>
         </div>
 
@@ -272,6 +305,28 @@
             }
         }
 
+    </script>
+
+    <!-- Js auto-slider -->
+    <script>
+        const slide=document.querySelector('.header_slider-item');
+        const wrapSlider=document.querySelector('.header_slider');
+        const btnNext=document.querySelector('.header__slider-control-right');
+        const btnPre=document.querySelector('.header__slider-control-left');
+        
+        btnNext.addEventListener('click', function(){
+            const list=document.querySelectorAll('.header_slider-item');
+            wrapSlider.append(list[0]);
+        })
+
+        btnPre.addEventListener('click', function(e){
+            const list=document.querySelectorAll('.header__slider-item');
+            wrapSlide.prepend(list[list.length-1]);
+        })
+
+        setInterval (function(){
+            btnNext.click();
+        }, 5000)
     </script>
 
 </body>
